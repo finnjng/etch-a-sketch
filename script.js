@@ -18,7 +18,7 @@ const formGrid = () => {
 
 formGrid();
 
-const btn = document.querySelector("button");
+const btn = document.querySelector("#size");
 btn.addEventListener("click", () => {
     size = parseInt(prompt("Enter size: (100 max)"));
     if (!isNaN(size) && size <= 100) {
@@ -27,6 +27,13 @@ btn.addEventListener("click", () => {
         alert("Enter a valid number (100 max)")
     }
 })
+
+const clearbtn = document.querySelector("#clear");
+clearbtn.addEventListener("click", ()=>{
+    gridContainer.textContent = '';
+    formGrid();
+});
+
 
 const randomColor = () => {
     const r = Math.floor(Math.random() * 256);
@@ -49,5 +56,4 @@ gridContainer.addEventListener("mouseover", (e) => {
 
     };
 })
-
 
